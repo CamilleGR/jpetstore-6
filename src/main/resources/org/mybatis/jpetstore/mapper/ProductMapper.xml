@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-       Copyright 2010-2020 the original author or authors.
+       Copyright 2010-2021 the original author or authors.
 
        Licensed under the Apache License, Version 2.0 (the "License");
        you may not use this file except in compliance with the License.
@@ -24,33 +24,33 @@
   <cache />
 
   <select id="getProduct" resultType="Product">
-    SELECT
-      PRODUCTID,
-      NAME,
-      DESCN as description,
-      CATEGORY as categoryId
-    FROM PRODUCT
-    WHERE PRODUCTID = #{productId}
+    select
+      productid,
+      name,
+      descn as description,
+      category as categoryid
+    from product
+    where productid = #{productid}
   </select>
 
   <select id="getProductListByCategory" resultType="Product">
-    SELECT
-      PRODUCTID,
-      NAME,
-      DESCN as description,
-      CATEGORY as categoryId
-    FROM PRODUCT
-    WHERE CATEGORY = #{value}
+    select
+      productid,
+      name,
+      descn as description,
+      category as categoryid
+    from product
+    where category = #{value}
   </select>
 
   <select id="searchProductList" resultType="Product">
     select
-      PRODUCTID,
-      NAME,
-      DESCN as description,
-      CATEGORY as categoryId
-    from PRODUCT
-    WHERE lower(name) like #{value}
+      productid,
+      name,
+      descn as description,
+      category as categoryid
+    from product
+    where lower(name) like #{value}
   </select>
 
 </mapper>

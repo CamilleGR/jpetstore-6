@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-       Copyright 2010-2020 the original author or authors.
+       Copyright 2010-2021 the original author or authors.
 
        Licensed under the Apache License, Version 2.0 (the "License");
        you may not use this file except in compliance with the License.
@@ -24,20 +24,20 @@
   <cache />
 
   <select id="getCategory" resultType="Category">
-    SELECT
-      CATID AS categoryId,
-      NAME,
-      DESCN AS description
-    FROM CATEGORY
-    WHERE CATID = #{categoryId}
+    select
+      catid as categoryid,
+      name,
+      descn as description
+    from category
+    where catid = #{categoryid}
   </select>
 
   <select id="getCategoryList" resultType="Category">
-    SELECT
-      CATID AS categoryId,
-      NAME,
-      DESCN AS description
-    FROM CATEGORY
+    select
+      catid as categoryid,
+      name,
+      descn as description
+    from category
   </select>
 
 </mapper>

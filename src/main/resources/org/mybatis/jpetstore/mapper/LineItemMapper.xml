@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-       Copyright 2010-2020 the original author or authors.
+       Copyright 2010-2021 the original author or authors.
 
        Licensed under the Apache License, Version 2.0 (the "License");
        you may not use this file except in compliance with the License.
@@ -24,18 +24,18 @@
   <cache />
 
   <select id="getLineItemsByOrderId" resultType="LineItem">
-    SELECT
-      ORDERID,
-      LINENUM AS lineNumber,
-      ITEMID,
-      QUANTITY,
-      UNITPRICE
-    FROM LINEITEM
-    WHERE ORDERID = #{orderId}
+    select
+      orderid,
+      linenum as linenumber,
+      itemid,
+      quantity,
+      unitprice
+    from lineitem
+    where orderid = #{orderId}
   </select>
 
   <insert id="insertLineItem">
-    INSERT INTO LINEITEM (ORDERID, LINENUM, ITEMID, QUANTITY, UNITPRICE)
+    insert into lineitem (orderid, linenum, itemid, quantity, unitprice)
     VALUES (#{orderId}, #{lineNumber}, #{itemId}, #{quantity}, #{unitPrice})
   </insert>
 
